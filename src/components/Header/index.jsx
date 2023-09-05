@@ -3,7 +3,8 @@ export const Header = () => {
     <header
       style={{
         backgroundColor: '#1d1d1d',
-        padding: '1rem 1rem 1rem'
+        padding: '1rem 1rem 1rem',
+        textAlign: 'center'
       }}
     >
       <h1>Missão Impossivél</h1>

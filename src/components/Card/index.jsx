@@ -15,7 +15,7 @@ export const Card = (prosps) => {
             marginTop: 10,
             textAlign: 'center'
           }}
-          >Missão Impossivel 2</h2>
+          >{prosps.texto}</h2>
         </div>
   )
 }
