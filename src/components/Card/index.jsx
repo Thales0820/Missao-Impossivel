@@ -1,6 +1,7 @@
 export const Card = (prosps) => {
   return (
         <div
+        onClick={() => prosps.onClick()}
         style={{
           backgroundColor: '#303030',
           padding: 20,
@@ -15,7 +16,7 @@ export const Card = (prosps) => {
             marginTop: 10,
             textAlign: 'center'
           }}
-          >{prosps.texto}</h2>
+          >{prosps.titulo}</h2>
         </div>
   )
 }
