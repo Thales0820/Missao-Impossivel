@@ -1,18 +1,22 @@
 import React, { useRef, useState } from "react";
+//importando os componenets
 import {Header} from './components/Header';
 import {Card} from './components/Card';
 import {Footer} from "./components/Footer";
 import Modal, {ModalBody, ModalHeader} from "./components/Modal";
 
-import banner from './imagens/banner.jpg';
-import styles from './style.module.css';
+//import styles from './style.module.css';
 import './styles/global.css';
+//importando as imagens isadas no projeto
+import banner from './imagens/banner.jpg';
 import card1 from './imagens/card1.jpg'
 import card2 from './imagens/card2.jpg'
 import card3 from './imagens/card3.jpg'
 import card4 from './imagens/card4.jpg'
 // npm install
 //npm run start
+
+//Esse Array é teoricamente um Banco de Dados
 const requisicao = [
    {
 		"id": 1,
@@ -69,7 +73,9 @@ function App() {
   }
 
   return (
+    //para poder colocar mais de um componente
     <>
+      {/* adicionando o componente Header da pasta components */}
       <Header />
       <img width="100%" src={banner} alt="Missão Impossível" />
       {/* <h1 className={styles.title}>Hello World</h1> */}
@@ -87,13 +93,15 @@ function App() {
           flexWrap: 'wrap'
         }}>
           {
+            /* usando map para executar os itens do Array requisicao */
           requisicao.map((filme) => {
             return (
+              /* adicionando o componente Card da pasta components */
               <Card
                 key={filme.id}
                 imagem={filme.imagem}
                 titulo={filme.titulo} //alterar texto para titulo no Card
-                onClick={() => onClickCard(filme)}
+                onClick={() => onClickCard(filme)}//Está pegando o ID para colocar as informações corretas no Modal
               />
             )
           })
@@ -104,13 +112,16 @@ function App() {
           <Card imagem={card3} texto={"Missão Impossível 5"}/>
           <Card imagem={card4} texto={"Missão Impossível 7"}/> */}
       </div>
+      {/* adicionando o componente Modal da pasta components */}
       <Modal
         show={showModal}
         setShow={setShowModal}
       >
+        {/* adicionando o componente ModalHeader da pasta components */}
         <ModalHeader>
           <h2>{refFilmeModal.current.titulo}</h2>
         </ModalHeader>
+        {/* adicionando o componente ModalBody da pasta components */}
         <ModalBody>
           <p style={{
             fontSize: '0.8rem',
@@ -166,6 +177,7 @@ function App() {
           </p>
         </ModalBody>
       </Modal>
+      {/* adicionando o componente Footer da pasta components */}
       <Footer />
     </>
   );
